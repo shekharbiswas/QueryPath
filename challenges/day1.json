@@ -1,0 +1,149 @@
+{
+  "day": 1,
+  "challenges": [
+    {
+      "title": "Customers from Germany",
+      "scenario": "You're building a regional report. List all customers from Germany.",
+      "schema": {
+        "table": "customers",
+        "columns": {
+          "customer_id": "INTEGER",
+          "name": "TEXT",
+          "country": "TEXT",
+          "signup_date": "DATE"
+        }
+      },
+      "prompt": "Write a SQL query to select the names of customers from Germany.",
+      "starter_code": "SELECT name FROM customers WHERE ...;",
+      "expected_query": "SELECT name FROM customers WHERE country = 'Germany';",
+      "expected_output": [
+        {
+          "name": "Anna Schultz"
+        },
+        {
+          "name": "Lukas Meier"
+        }
+      ],
+      "reflection": [
+        "What assumption did you make about the country column?"
+      ],
+      "hints": [
+        "Use '=' with text values in quotes."
+      ]
+    },
+    {
+      "title": "Recent Signups",
+      "scenario": "The marketing team wants customers who joined after 2023-01-01.",
+      "schema": {
+        "table": "customers",
+        "columns": {
+          "customer_id": "INTEGER",
+          "name": "TEXT",
+          "country": "TEXT",
+          "signup_date": "DATE"
+        }
+      },
+      "prompt": "Select names of customers who signed up after 2023-01-01.",
+      "starter_code": "SELECT name FROM customers WHERE ...;",
+      "expected_query": "SELECT name FROM customers WHERE signup_date > '2023-01-01';",
+      "expected_output": [
+        {
+          "name": "Elena Roth"
+        },
+        {
+          "name": "Marco Beck"
+        }
+      ],
+      "reflection": [
+        "How do dates work in SQL filtering?"
+      ],
+      "hints": [
+        "Use '>' to compare dates."
+      ]
+    },
+    {
+      "title": "High-value Customers",
+      "scenario": "Find all customers who have spent more than 1000 EUR.",
+      "schema": {
+        "table": "orders",
+        "columns": {
+          "order_id": "INTEGER",
+          "customer_id": "INTEGER",
+          "total_amount": "FLOAT"
+        }
+      },
+      "prompt": "List customer_ids from orders where the amount is greater than 1000.",
+      "starter_code": "SELECT customer_id FROM orders WHERE ...;",
+      "expected_query": "SELECT customer_id FROM orders WHERE total_amount > 1000;",
+      "expected_output": [
+        {
+          "customer_id": 2
+        },
+        {
+          "customer_id": 5
+        }
+      ],
+      "reflection": [
+        "What kind of data is best suited for filtering with numbers?"
+      ],
+      "hints": [
+        "Look at the column 'total_amount'."
+      ]
+    },
+    {
+      "title": "Free-tier Users",
+      "scenario": "The support team needs a list of all users not on premium.",
+      "schema": {
+        "table": "users",
+        "columns": {
+          "user_id": "INTEGER",
+          "name": "TEXT",
+          "is_premium": "BOOLEAN"
+        }
+      },
+      "prompt": "Get names of users where is_premium is FALSE.",
+      "starter_code": "SELECT name FROM users WHERE ...;",
+      "expected_query": "SELECT name FROM users WHERE is_premium = FALSE;",
+      "expected_output": [
+        {
+          "name": "Ben"
+        },
+        {
+          "name": "Lucy"
+        }
+      ],
+      "reflection": [
+        "Why is BOOLEAN filtering tricky in some databases?"
+      ],
+      "hints": [
+        "Use = FALSE or = 0 depending on DB."
+      ]
+    },
+    {
+      "title": "Customer Filter Combo",
+      "scenario": "A stakeholder needs German customers who signed up after 2022-12-31.",
+      "schema": {
+        "table": "customers",
+        "columns": {
+          "customer_id": "INTEGER",
+          "name": "TEXT",
+          "country": "TEXT",
+          "signup_date": "DATE"
+        }
+      },
+      "prompt": "Filter customers from Germany who signed up after 2022-12-31.",
+      "starter_code": "SELECT name FROM customers WHERE ...;",
+      "expected_query": "SELECT name FROM customers WHERE country = 'Germany' AND signup_date > '2022-12-31';",
+      "expected_output": [
+        {
+          "name": "Klara M\u00fcller"
+        }
+      ],
+      "reflection": [
+        "How do multiple conditions work together?"
+      ],
+      "hints": [
+        "Use AND between conditions."
+      ]
+    }
+  ]
