@@ -115,7 +115,7 @@ querypath/
 - Exportable end-of-week report (PDF)
 
 
-## 🧠 Beyond SQL: Cognitive Benefits of QueryPath
+## 🧠 Beyond SQL: _Cognitive benefits?_
 
 QueryPath is more than a tool for learning SQL syntax — it's a system to **train how you think**, **notice**, and **solve**.  
 Every daily challenge is designed to strengthen mental agility while deepening data intuition.
