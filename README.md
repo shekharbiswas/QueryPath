@@ -1,4 +1,4 @@
-# 🧭 QueryPath: SQL Growth Companion
+# 🧭 QueryPath: SQL _growth companion_
 
 **QueryPath** is a focused, reflective SQL learning app.
 Designed for adult learners, it combines SQL micro-challenges with habit tracking, self-reflection, and daily progression — helping users *not just learn*, but *grow with purpose*.
