@@ -1,0 +1,133 @@
+{
+  "day": 3,
+  "challenges": [
+    {
+      "title": "Top 3 Customers by Spend",
+      "scenario": "The sales team wants to know the top 3 spending customers.",
+      "schema": {
+        "table": "orders",
+        "columns": {
+          "customer_id": "INTEGER",
+          "total_amount": "FLOAT"
+        }
+      },
+      "prompt": "List top 3 customers by total_amount.",
+      "starter_code": "SELECT customer_id, total_amount FROM orders ORDER BY ...;",
+      "expected_query": "SELECT customer_id, total_amount FROM orders ORDER BY total_amount DESC LIMIT 3;",
+      "expected_output": [
+        {
+          "customer_id": 7,
+          "total_amount": 2200.0
+        }
+      ],
+      "reflection": [
+        "What does DESC do here?"
+      ],
+      "hints": [
+        "Use ORDER BY with LIMIT."
+      ]
+    },
+    {
+      "title": "Oldest Signup",
+      "scenario": "Which customer signed up first?",
+      "schema": {
+        "table": "customers",
+        "columns": {
+          "customer_id": "INTEGER",
+          "signup_date": "DATE"
+        }
+      },
+      "prompt": "Select the customer_id of the earliest signup.",
+      "starter_code": "SELECT customer_id FROM customers ORDER BY ...;",
+      "expected_query": "SELECT customer_id FROM customers ORDER BY signup_date ASC LIMIT 1;",
+      "expected_output": [
+        {
+          "customer_id": 1
+        }
+      ],
+      "reflection": [
+        "What if you forget LIMIT?"
+      ],
+      "hints": [
+        "Use ASC for oldest."
+      ]
+    },
+    {
+      "title": "Latest 2 Orders",
+      "scenario": "Show the two most recent orders.",
+      "schema": {
+        "table": "orders",
+        "columns": {
+          "order_id": "INTEGER",
+          "order_date": "DATE"
+        }
+      },
+      "prompt": "Select the latest 2 order_ids.",
+      "starter_code": "SELECT order_id FROM orders ORDER BY ...;",
+      "expected_query": "SELECT order_id FROM orders ORDER BY order_date DESC LIMIT 2;",
+      "expected_output": [
+        {
+          "order_id": 13
+        },
+        {
+          "order_id": 12
+        }
+      ],
+      "reflection": [
+        "How would this change in a dashboard?"
+      ],
+      "hints": [
+        "Latest means DESC on date."
+      ]
+    },
+    {
+      "title": "Top 5 Active Users",
+      "scenario": "Find 5 most recently active users by login time.",
+      "schema": {
+        "table": "logins",
+        "columns": {
+          "user_id": "INTEGER",
+          "last_login": "DATETIME"
+        }
+      },
+      "prompt": "Get user_ids ordered by last_login (latest first), limit 5.",
+      "starter_code": "SELECT user_id FROM logins ORDER BY ...;",
+      "expected_query": "SELECT user_id FROM logins ORDER BY last_login DESC LIMIT 5;",
+      "expected_output": [
+        {
+          "user_id": 9
+        }
+      ],
+      "reflection": [
+        "Why is time-based order important in alerts?"
+      ],
+      "hints": [
+        "DESC sorts from latest to oldest."
+      ]
+    },
+    {
+      "title": "First 10 Emails",
+      "scenario": "System is being tested \u2014 show first 10 emails alphabetically.",
+      "schema": {
+        "table": "users",
+        "columns": {
+          "email": "TEXT"
+        }
+      },
+      "prompt": "List 10 emails alphabetically.",
+      "starter_code": "SELECT email FROM users ORDER BY ...;",
+      "expected_query": "SELECT email FROM users ORDER BY email ASC LIMIT 10;",
+      "expected_output": [
+        {
+          "email": "anna@example.com"
+        }
+      ],
+      "reflection": [
+        "What could go wrong if email is NULL?"
+      ],
+      "hints": [
+        "ASC for A-Z."
+      ]
+    }
+  ]
+}

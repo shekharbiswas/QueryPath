@@ -1,0 +1,146 @@
+{
+  "day": 2,
+  "challenges": [
+    {
+      "title": "Active German Users",
+      "scenario": "Your product team wants to target German users who are also active.",
+      "schema": {
+        "table": "users",
+        "columns": {
+          "user_id": "INTEGER",
+          "name": "TEXT",
+          "country": "TEXT",
+          "is_active": "BOOLEAN"
+        }
+      },
+      "prompt": "Get the names of users from Germany who are active.",
+      "starter_code": "SELECT name FROM users WHERE ...;",
+      "expected_query": "SELECT name FROM users WHERE country = 'Germany' AND is_active = TRUE;",
+      "expected_output": [
+        {
+          "name": "Stefan"
+        },
+        {
+          "name": "Monika"
+        }
+      ],
+      "reflection": [
+        "What happens if you reverse the order of conditions?"
+      ],
+      "hints": [
+        "Use AND to combine both filters."
+      ]
+    },
+    {
+      "title": "Trial or Free Users",
+      "scenario": "You need a list of users who are either on a free plan or trial.",
+      "schema": {
+        "table": "users",
+        "columns": {
+          "user_id": "INTEGER",
+          "plan": "TEXT"
+        }
+      },
+      "prompt": "Select users who have plan 'free' OR 'trial'.",
+      "starter_code": "SELECT user_id FROM users WHERE ...;",
+      "expected_query": "SELECT user_id FROM users WHERE plan = 'free' OR plan = 'trial';",
+      "expected_output": [
+        {
+          "user_id": 3
+        },
+        {
+          "user_id": 7
+        }
+      ],
+      "reflection": [
+        "When would you use OR in real data filtering?"
+      ],
+      "hints": [
+        "Use separate conditions for each value."
+      ]
+    },
+    {
+      "title": "Not USA Customers",
+      "scenario": "Compliance needs to audit non-USA customers.",
+      "schema": {
+        "table": "customers",
+        "columns": {
+          "customer_id": "INTEGER",
+          "country": "TEXT"
+        }
+      },
+      "prompt": "List customers not from the USA.",
+      "starter_code": "SELECT customer_id FROM customers WHERE ...;",
+      "expected_query": "SELECT customer_id FROM customers WHERE country != 'USA';",
+      "expected_output": [
+        {
+          "customer_id": 4
+        },
+        {
+          "customer_id": 5
+        }
+      ],
+      "reflection": [
+        "Is != the same as NOT?"
+      ],
+      "hints": [
+        "You can use NOT or !=."
+      ]
+    },
+    {
+      "title": "Logged In But Not Premium",
+      "scenario": "Find users who are active but not on a premium plan.",
+      "schema": {
+        "table": "users",
+        "columns": {
+          "user_id": "INTEGER",
+          "is_active": "BOOLEAN",
+          "is_premium": "BOOLEAN"
+        }
+      },
+      "prompt": "Select user IDs where user is active AND not premium.",
+      "starter_code": "SELECT user_id FROM users WHERE ...;",
+      "expected_query": "SELECT user_id FROM users WHERE is_active = TRUE AND is_premium = FALSE;",
+      "expected_output": [
+        {
+          "user_id": 6
+        }
+      ],
+      "reflection": [
+        "How do we express negation in conditions?"
+      ],
+      "hints": [
+        "Use AND with = FALSE."
+      ]
+    },
+    {
+      "title": "Risk Accounts",
+      "scenario": "Security needs accounts from outside EU OR marked as inactive.",
+      "schema": {
+        "table": "accounts",
+        "columns": {
+          "account_id": "INTEGER",
+          "region": "TEXT",
+          "is_active": "BOOLEAN"
+        }
+      },
+      "prompt": "List all risky accounts (region != 'EU' OR is_active = FALSE).",
+      "starter_code": "SELECT account_id FROM accounts WHERE ...;",
+      "expected_query": "SELECT account_id FROM accounts WHERE region != 'EU' OR is_active = FALSE;",
+      "expected_output": [
+        {
+          "account_id": 1
+        },
+        {
+          "account_id": 8
+        }
+      ],
+      "reflection": [
+        "How can OR increase result size?"
+      ],
+      "hints": [
+        "Make sure either condition qualifies the row."
+      ]
+    }
+  ]
+}

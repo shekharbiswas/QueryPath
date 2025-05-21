@@ -1,0 +1,136 @@
+{
+  "day": 4,
+  "challenges": [
+    {
+      "title": "Signups Per Country",
+      "scenario": "The marketing team wants to see number of signups per country.",
+      "schema": {
+        "table": "customers",
+        "columns": {
+          "customer_id": "INTEGER",
+          "country": "TEXT"
+        }
+      },
+      "prompt": "Get country and number of signups per country.",
+      "starter_code": "SELECT country, COUNT(*) FROM customers GROUP BY ...;",
+      "expected_query": "SELECT country, COUNT(*) FROM customers GROUP BY country;",
+      "expected_output": [
+        {
+          "country": "Germany",
+          "count": 5
+        }
+      ],
+      "reflection": [
+        "What if you group by something wrong?"
+      ],
+      "hints": [
+        "Always GROUP BY columns not in aggregate."
+      ]
+    },
+    {
+      "title": "Orders Per User",
+      "scenario": "Find how many orders each user made.",
+      "schema": {
+        "table": "orders",
+        "columns": {
+          "order_id": "INTEGER",
+          "user_id": "INTEGER"
+        }
+      },
+      "prompt": "Show user_id and count of orders.",
+      "starter_code": "SELECT user_id, COUNT(*) FROM orders GROUP BY ...;",
+      "expected_query": "SELECT user_id, COUNT(*) FROM orders GROUP BY user_id;",
+      "expected_output": [
+        {
+          "user_id": 1,
+          "count": 3
+        }
+      ],
+      "reflection": [
+        "How does COUNT handle duplicates?"
+      ],
+      "hints": [
+        "GROUP BY user_id."
+      ]
+    },
+    {
+      "title": "Premium vs Free Users",
+      "scenario": "Summarize how many users are on each plan.",
+      "schema": {
+        "table": "users",
+        "columns": {
+          "user_id": "INTEGER",
+          "plan": "TEXT"
+        }
+      },
+      "prompt": "Group by plan and count users.",
+      "starter_code": "SELECT plan, COUNT(*) FROM users GROUP BY ...;",
+      "expected_query": "SELECT plan, COUNT(*) FROM users GROUP BY plan;",
+      "expected_output": [
+        {
+          "plan": "free",
+          "count": 4
+        }
+      ],
+      "reflection": [
+        "Do you need ORDER BY with GROUP BY?"
+      ],
+      "hints": [
+        "You can sort it, but not required."
+      ]
+    },
+    {
+      "title": "Country with Most Users",
+      "scenario": "Find which country has the most users.",
+      "schema": {
+        "table": "users",
+        "columns": {
+          "user_id": "INTEGER",
+          "country": "TEXT"
+        }
+      },
+      "prompt": "Group users by country, count them, and show the top 1.",
+      "starter_code": "SELECT country, COUNT(*) FROM users GROUP BY country ORDER BY ...;",
+      "expected_query": "SELECT country, COUNT(*) FROM users GROUP BY country ORDER BY COUNT(*) DESC LIMIT 1;",
+      "expected_output": [
+        {
+          "country": "Germany",
+          "count": 8
+        }
+      ],
+      "reflection": [
+        "What makes this aggregation useful in business?"
+      ],
+      "hints": [
+        "Combine GROUP BY, ORDER BY, LIMIT."
+      ]
+    },
+    {
+      "title": "Inactive User Groups",
+      "scenario": "How many inactive users are in each region?",
+      "schema": {
+        "table": "users",
+        "columns": {
+          "user_id": "INTEGER",
+          "region": "TEXT",
+          "is_active": "BOOLEAN"
+        }
+      },
+      "prompt": "Group by region where is_active is FALSE, and count.",
+      "starter_code": "SELECT region, COUNT(*) FROM users WHERE is_active = FALSE GROUP BY ...;",
+      "expected_query": "SELECT region, COUNT(*) FROM users WHERE is_active = FALSE GROUP BY region;",
+      "expected_output": [
+        {
+          "region": "Asia",
+          "count": 2
+        }
+      ],
+      "reflection": [
+        "How do WHERE and GROUP BY interact?"
+      ],
+      "hints": [
+        "Filter first, then group."
+      ]
+    }
+  ]
+}
