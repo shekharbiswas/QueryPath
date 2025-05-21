@@ -114,3 +114,17 @@ querypath/
 - Dark mode & accessibility improvements
 - Exportable end-of-week report (PDF)
 
+
+## 🧠 Beyond SQL: Cognitive Benefits of QueryPath
+
+QueryPath is more than a tool for learning SQL syntax — it's a system to **train how you think**, **notice**, and **solve**.  
+Every daily challenge is designed to strengthen mental agility while deepening data intuition.
+
+- **🧠 Improve Memory** — Retain SQL patterns and logic through repetition and reflection  
+- **⚡ Increase Speed of Thought** — Make faster, sharper decisions when querying messy datasets  
+- **🧩 Train Logical Thinking** — Develop structured, step-by-step approaches to complex problems  
+- **📊 Improve Quality of Work** — Write cleaner, more accurate SQL in less time  
+- **🔄 Embrace Pattern Recognition** — Spot common query structures and recurring data behaviors  
+- **🧭 Build Analytical Confidence** — Move from “guesswork” to deliberate analysis with clarity  
+
+> _“SQL isn’t just a tech skill — it’s a thinking discipline.”_
