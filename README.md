@@ -163,7 +163,7 @@ These are the key steps for integrating a locally-hosted Hugging Face LLM direct
 *   **Mechanism:** Use `st.info()`, `st.markdown()`, or an `st.expander()` to display the text returned by the LLM.
 *   **Location:** Within the feedback display section (`ui/feedback_display.py`), triggered after the AI hint button is pressed.
 
-### II. Advanced System Design Concepts (for Scalability & Robustness)
+### II. Advanced System (for Scalability & Robustness)
 
 If the application needs to support more users or if the LLM becomes a performance bottleneck, consider these concepts:
 
