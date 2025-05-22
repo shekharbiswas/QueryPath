@@ -16,20 +16,8 @@
       "expected_query": "SELECT country, COUNT(*) FROM customers GROUP BY country;",
       "expected_output": [
         {
-          "country": "Canada",
-          "COUNT(*)": 1
-        },
-        {
           "country": "Germany",
-          "COUNT(*)": 5
-        },
-        {
-          "country": "UK",
-          "COUNT(*)": 1
-        },
-        {
-          "country": "USA",
-          "COUNT(*)": 1
+          "count": 5
         }
       ],
       "reflection": [

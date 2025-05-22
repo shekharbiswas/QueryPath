@@ -91,20 +91,28 @@ From muted tones and soft UI interactions to personal journaling, the app is des
 ## 📁 Project structure
 
 ```
-querypath/
-├── app/
-│   └── QueryPath.py            # Main Streamlit app
+querypath_app/
 ├── challenges/
-│   ├── day1.json               # Daily challenge files
-│   ├── ...
-├── logic/
-│   ├── validator.py            # SQL query validation
-│   ├── progress_tracker.py     # Habit & score tracking
-├── assets/
-│   └── screenshots/            # UI previews
-├── README.md
-├── requirements.txt
-└── GDD.md                      # Game/app design document
+│   ├── day1.json
+│   └── day2.json # (and so on)
+├── data/
+│   └── challenges.db # Your SQLite database
+├── core/
+│   ├── __init__.py
+│   ├── data_loader.py     # Loads challenge JSON
+│   ├── db_connector.py    # Handles DB connection
+│   ├── query_validator.py # Normalizes and compares DFs
+│   └── session_state_manager.py # Manages session state initialization and access
+├── ui/
+│   ├── __init__.py
+│   ├── sidebar.py
+│   ├── challenge_display.py
+│   ├── query_input.py
+│   ├── navigation.py
+│   └── feedback_display.py
+├── app.py                 # Main Streamlit app script
+└── requirements.txt
+
 ```
 
 

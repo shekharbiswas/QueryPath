@@ -16,16 +16,8 @@
       "expected_query": "SELECT customer_id, total_amount FROM orders ORDER BY total_amount DESC LIMIT 3;",
       "expected_output": [
         {
-          "customer_id": 5,
-          "total_amount": 1500.0
-        },
-        {
-          "customer_id": 2,
-          "total_amount": 1200.0
-        },
-        {
-          "customer_id": 3,
-          "total_amount": 75.5
+          "customer_id": 7,
+          "total_amount": 2200.0
         }
       ],
       "reflection": [
@@ -50,7 +42,7 @@
       "expected_query": "SELECT customer_id FROM customers ORDER BY signup_date ASC LIMIT 1;",
       "expected_output": [
         {
-          "customer_id": 7
+          "customer_id": 1
         }
       ],
       "reflection": [

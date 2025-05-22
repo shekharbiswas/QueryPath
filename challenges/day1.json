@@ -17,12 +17,11 @@
       "starter_code": "SELECT name FROM customers WHERE ...;",
       "expected_query": "SELECT name FROM customers WHERE country = 'Germany';",
       "expected_output": [
-        {
-          "name": "Anna Schultz"
-        },
-        {
-          "name": "Lukas Meier"
-        }
+        {"name": "Anna Schultz"},
+        {"name": "Lukas Meier"},
+        {"name": "Elena Roth"},
+        {"name": "Marco Beck"},
+        {"name": "Klara Mueller"}
       ],
       "reflection": [
         "What assumption did you make about the country column?"
@@ -47,12 +46,10 @@
       "starter_code": "SELECT name FROM customers WHERE ...;",
       "expected_query": "SELECT name FROM customers WHERE signup_date > '2023-01-01';",
       "expected_output": [
-        {
-          "name": "Elena Roth"
-        },
-        {
-          "name": "Marco Beck"
-        }
+        {"name": "John Doe"},
+        {"name": "Elena Roth"},
+        {"name": "Marco Beck"},
+        {"name": "Klara Mueller"}
       ],
       "reflection": [
         "How do dates work in SQL filtering?"
@@ -76,12 +73,8 @@
       "starter_code": "SELECT customer_id FROM orders WHERE ...;",
       "expected_query": "SELECT customer_id FROM orders WHERE total_amount > 1000;",
       "expected_output": [
-        {
-          "customer_id": 2
-        },
-        {
-          "customer_id": 5
-        }
+        {"customer_id": 2},
+        {"customer_id": 5}
       ],
       "reflection": [
         "What kind of data is best suited for filtering with numbers?"
@@ -105,12 +98,8 @@
       "starter_code": "SELECT name FROM users WHERE ...;",
       "expected_query": "SELECT name FROM users WHERE is_premium = FALSE;",
       "expected_output": [
-        {
-          "name": "Ben"
-        },
-        {
-          "name": "Lucy"
-        }
+        {"name": "Ben"},
+        {"name": "Lucy"}
       ],
       "reflection": [
         "Why is BOOLEAN filtering tricky in some databases?"
@@ -135,9 +124,9 @@
       "starter_code": "SELECT name FROM customers WHERE ...;",
       "expected_query": "SELECT name FROM customers WHERE country = 'Germany' AND signup_date > '2022-12-31';",
       "expected_output": [
-        {
-          "name": "Klara M\u00fcller"
-        }
+        {"name": "Elena Roth"},
+        {"name": "Marco Beck"},
+        {"name": "Klara Mueller"}
       ],
       "reflection": [
         "How do multiple conditions work together?"
