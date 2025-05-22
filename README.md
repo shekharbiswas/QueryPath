@@ -116,13 +116,6 @@ querypath_app/
 ```
 
 
-## ✨ Future Plans
-- User accounts (via Google or GitHub OAuth)
-- Streak reminders via email
-- Dark mode & accessibility improvements
-- Exportable end-of-week report (PDF)
-
-
 
 ## LLM Integration & System
 
@@ -190,6 +183,14 @@ If the application needs to support more users or if the LLM becomes a performan
 ### III. Initial Focus for QueryPath
 For the current QueryPath application, the "Core LLM Integration in Streamlit" (Section I) using `@st.cache_resource` for model loading and `@st.cache_data` for hint caching will likely be sufficient, especially when using tools like Ollama that simplify local model serving. The advanced concepts (Section II) become more relevant if the LLM workload grows significantly.
 
+
+
+
+## ✨ Future Plans
+- User accounts (via Google or GitHub OAuth)
+- Streak reminders via email
+- Dark mode & accessibility improvements
+- Exportable end-of-week report (PDF)
 
 
 ## 🧠 Beyond SQL: _Cognitive benefits?_
