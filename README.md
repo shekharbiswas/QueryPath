@@ -124,7 +124,7 @@ querypath_app/
 
 
 
-### LLM Integration & System
+## LLM Integration & System
 
 This document outlines the core integration points for adding a self-hosted LLM for dynamic SQL hints within the QueryPath Streamlit application, along with considerations for a more robust system design if scaling is required.
 
