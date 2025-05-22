@@ -1,18 +1,19 @@
 # querypath_app/app.py
-import streamlit as st
-import pandas as pd
+import streamlit as st # First Streamlit import
+import pandas as pd # Keep pandas import if used elsewhere or for potential debugging
+import os # Example of another standard/3rd party import
+import json # Example
 
+# --- Page Configuration (MUST BE THE FIRST STREAMLIT COMMAND) ---
+st.set_page_config(page_title="🧠 QueryPath SQL", layout="wide", initial_sidebar_state="expanded")
+
+# NOW, import your custom project modules
 # Core imports
 from core.session_state_manager import (
     initialize_session_state,
     get_current_user_query,
-    # set_current_user_query, # No longer directly called from app.py for this logic
-    # update_points, # Called within handle_query_execution
-    # get_last_run_output, # Called within display_feedback
-    # set_last_run_output, # Called within handle_query_execution
-    # clear_last_run_output_for_current_challenge, # Not actively used
     navigate_to_challenge,
-    is_challenge_already_solved_in_session # Useful for context
+    is_challenge_already_solved_in_session
 )
 from core.data_loader import get_challenge, get_max_challenges_for_day, get_total_days
 from core.db_connector import get_connection
@@ -24,18 +25,18 @@ from ui.challenge_display import (
     display_challenge_prompt_area,
     display_reflection_and_hints
 )
-from ui.query_input import display_query_area # Handles Run Query button and its disabled state
-from ui.navigation import display_navigation_buttons # Handles Prev/Conditional Next
+from ui.query_input import display_query_area
+from ui.navigation import display_navigation_buttons
 from ui.feedback_display import display_feedback, handle_query_execution
 
 
-# --- Page Configuration ---
-st.set_page_config(page_title="🧠 QueryPath SQL", layout="wide", initial_sidebar_state="expanded")
-
 # --- Initialize Session State ---
+# This is now correctly placed AFTER set_page_config
 initialize_session_state()
 if "show_balloons_once" not in st.session_state:
     st.session_state.show_balloons_once = False
+
+# ... rest of your app.py code (st.title, st.markdown, etc.)
 
 # --- Main App UI ---
 st.title("🧠 QueryPath – Improve Your SQL")
@@ -96,7 +97,12 @@ with col_solution_area:
     st.divider()
 
     # 5. Display Feedback (after potential execution or if viewing a solved challenge)
-    display_feedback(current_challenge_data.get("expected_output", []))
+    # Ensure current_challenge_data is passed for the RAG hint button context
+    display_feedback(
+        current_challenge_data.get("expected_output", []),
+        current_challenge_data
+    )
+
 
 # --- Reflection and Hints ---
 st.divider()
