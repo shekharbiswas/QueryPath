@@ -71,7 +71,7 @@ pip install -r requirements.txt
 
 ### 3. Run the App
 ```bash
-streamlit run app/QueryPath.py
+streamlit run app.py
 ```
 
 ## 🎨 Design Philosophy
