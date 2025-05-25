@@ -6,6 +6,13 @@ Its a MVP prototype.
 
 <br>
 
+
+<img width="1024" alt="image" src="https://github.com/user-attachments/assets/2c720a43-40d0-41ba-9ece-3b15cd14b9e0" />
+
+
+<br>
+
+
 ## 🌟 Why QueryPath?
 
 Most SQL tutorials throw information at learners.  
