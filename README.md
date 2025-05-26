@@ -11,10 +11,11 @@ Its a MVP prototype.
 
 
 <br>
+<br>
 
-📺 **Watch the Demo**  
-[![Watch the demo](https://img.youtube.com/vi/2NbHvPD_n-Y/hqdefault.jpg)](https://www.youtube.com/watch?v=2NbHvPD_n-Y)  
-→ Click to explore how QueryPath transforms SQL learning into a meaningful daily habit.
+
+📺 [**Watch the Demo**  ](https://www.youtube.com/watch?v=2NbHvPD_n-Y)
+
 
 <br>
 
